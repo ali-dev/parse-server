@@ -69,7 +69,7 @@ export class PushController {
       onPushStatusSaved(pushStatus.objectId);
       return badgeUpdate();
     }).then(() => {
-      // Update audience lastUsed and timesUsed
+      // Update audience parseLastUsed and parseTimesUsed
       if (body.audience_id) {
         const audienceId = body.audience_id;
 
