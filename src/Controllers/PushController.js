@@ -74,8 +74,8 @@ export class PushController {
         const audienceId = body.audience_id;
 
         var updateAudience = {
-          lastUsed: { __type: "Date", iso: new Date().toISOString() },
-          timesUsed: { __op: "Increment", "amount": 1 }
+          parseLastUsed: { __type: "Date", iso: new Date().toISOString() },
+          parseTimesUsed: { __op: "Increment", "amount": 1 }
         };
         const write = new RestWrite(config, master(config), '_Audience', {objectId: audienceId}, updateAudience);
         write.execute();
